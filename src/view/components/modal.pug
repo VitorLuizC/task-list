@@ -1,0 +1,6 @@
+mixin modal-container()
+  section.modal-container&attributes(attributes)
+    .overlay
+    .content
+      if block
+        block

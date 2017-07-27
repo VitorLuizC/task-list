@@ -1,0 +1,22 @@
+.modal-container
+  height: 100%
+
+  & > .overlay
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: none
+    background-color: rgba(#000, .75)
+
+  & > .content
+    position: fixed
+    top: 50%
+    left: 50%
+    display: none
+    transform: translateY(-50%) translateX(-50%)
+
+  &.-open > .overlay
+  &.-open > .content
+    display: block

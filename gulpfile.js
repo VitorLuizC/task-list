@@ -6,7 +6,7 @@ const path    = require('path');
 const webpack = require('webpack');
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/script/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, './dist/js')
@@ -30,13 +30,13 @@ gulp.task('build:js', function (done) {
 });
 
 gulp.task('build:pug', () => {
-  gulp.src('./src/index.pug')
+  gulp.src('./src/view/index.pug')
     .pipe(pug({ pretty: true }))
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('build:styl', () => {
-  gulp.src('./src/index.styl')
+  gulp.src('./src/style/index.styl')
     .pipe(styl())
     .pipe(rename({ basename: 'style' }))
     .pipe(gulp.dest('./dist/css'));

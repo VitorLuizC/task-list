@@ -1,0 +1,21 @@
+//-
+//- Namespace para os componentes de lista de tarefas.
+//-
+
+include ./image.pug
+
+mixin task-list()
+  ul.task-list&attributes(attributes)
+    if block
+      block
+
+mixin task-item(title, time)
+  li.task-item&attributes(attributes)
+    h3.title !{title}
+    span.time
+      +image-element('icon-watch.png', 'Time', 'A watch icon')(class="icon")
+      | !{time}
+    .task-actions
+      button.task-action.-done Done
+      button.task-action.-delete Delete
+      button.task-action.-dismiss Dismiss

@@ -1,0 +1,22 @@
+//-
+//- Namespace para os componentes de formulário.
+//-
+
+mixin form-container()
+  form.form-container&attributes(attributes)
+    if block
+      block
+
+mixin form-input(label, type)
+  .form-input(class!=attributes.class)
+    if label
+      label.label(for!=attributes.id) !{label}
+    if type
+      input.input(type=type, id!=attributes.id)&attributes(attributes)
+
+mixin form-button(text)
+  button.form-button&attributes(attributes)
+    if text
+      span.text !{text}
+    if block
+      block

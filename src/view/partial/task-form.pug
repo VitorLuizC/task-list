@@ -1,0 +1,8 @@
+include ../components/modal.pug
+include ../components/form.pug
+
++modal-container()
+  +form-container()
+    +form-input('Title', 'text')(data-id="input-title")
+    +form-input('Time', 'time')(data-id="input-time")
+    +form-button('Add', 'submit')

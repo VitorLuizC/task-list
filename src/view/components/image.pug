@@ -1,0 +1,15 @@
+//-
+//- Namespace para os componentes de imagem.
+//-
+
+mixin image-element(src, alt, title)
+  - src = 'img/' + src
+  - title = title || alt
+  img.image-element(src=src, alt=alt, title=title)&attributes(attributes)
+
+mixin image-block(src, alt, title)
+  .image-block
+  if src
+    +image-element(src, alt, title)
+  if block
+    block

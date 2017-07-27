@@ -1,0 +1,15 @@
+extends ./base/layout.pug
+
+include ./components/form.pug
+include ./components/task-list.pug
+
+block content
+  +form-button('Add a task')(data-id="show-form")
+  +task-list
+    +task-item('Fazer as compras', '01:35PM')
+    +task-item('Preparar o jantar', '16:40PM')
+  include ./partial/task-form.pug
+
+block template
+  script#template-task-item(type='text/template')
+    +task-item('{{title}}', '{{time}}')
