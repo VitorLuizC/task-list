@@ -1,6 +1,18 @@
 .task-item
-  display: block
+  centralize(block)
+  box-sizing: border-box
+  width: 300px
+  min-height: 140px
+  padding: 14px
+  border: 1px solid #e7e7e7
+  border-radius: 8px
+  background-color: #f8f8f8
+  box-shadow: 0 2px 20px rgba(#000, .25)
 
 .task-items
   display: flex
   flex-direction: column
+  background-color: #fff
+
+  & > .task-item + .task-item
+    margin-top: 40px

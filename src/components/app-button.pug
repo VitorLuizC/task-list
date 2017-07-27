@@ -1,0 +1,6 @@
+mixin app-button(text)
+  button.app-button&attributes(attributes)
+    if text
+      span.text !{text}
+    else if block
+      block

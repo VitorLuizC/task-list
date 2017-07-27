@@ -1,9 +1,13 @@
 extends ./base/layout.pug
 
+include ./components/app-button.pug
 include ./components/task-item.pug
 
 block content
-  section.list-items
+  +app-button('Add a task')
+  section.task-items
+    +task-item('Fazer as compras', '01:35PM')
+    +task-item('Preparar o jantar', '16:40PM')
 
 block template
   script#template-task-item(type='text/template')
