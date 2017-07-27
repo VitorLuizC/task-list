@@ -10,7 +10,8 @@ const config = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, './dist/js')
-  }
+  },
+  devtool: 'source-map'
 };
 
 gulp.task('build:js', function (done) {
@@ -44,8 +45,8 @@ gulp.task('build:styl', () => {
 
 gulp.task('move:images', () => {
   gulp.src('./src/assets/images/**/*')
-    .pipe(gulp.dest('./dist/img'))
-})
+    .pipe(gulp.dest('./dist/img'));
+});
 
 gulp.task('build', ['move:images', 'build:js', 'build:pug', 'build:styl']);
 
