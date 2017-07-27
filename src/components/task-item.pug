@@ -1,0 +1,10 @@
+mixin task-item(title, time)
+  .task-item
+    h3.title !{title}
+    span.time
+      i.icon.-time
+      | !{time}
+    .task-actions
+      button.task-action.-done Done
+      button.task-action.-delete Delete
+      button.task-action.-dismiss Dismiss

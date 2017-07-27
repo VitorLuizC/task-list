@@ -1,4 +1,10 @@
 extends ./base/layout.pug
 
+include ./components/task-item.pug
+
 block content
-  p Hello world!
+  section.list-items
+
+block template
+  script#template-task-item(type='text/template')
+    +task-item('[title]', '[time]')
