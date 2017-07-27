@@ -28,5 +28,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.6.0",
     "webpack": "^3.4.1"
+  },
+  "dependencies": {
+    "firebase": "^4.1.5"
   }
 }

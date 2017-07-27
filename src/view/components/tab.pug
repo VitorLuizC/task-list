@@ -1,0 +1,12 @@
+mixin tab-item(item)
+  a.tab-item(data-tab=item) !{item}
+
+mixin tab-items(items)
+  nav.tab-items
+    each item in items
+      +tab-item(item)
+
+mixin tab-container(item)
+  section.tab-container(data-tab=item)
+    if block
+      block
