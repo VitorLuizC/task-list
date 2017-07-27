@@ -1,0 +1,24 @@
+root = true
+
+# Configurações do editor
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Indentação dos fontes
+[*.{pug,styl,js}]
+indent_size = 2
+indent_style = space
+
+# Desabilita a remoção de espaços em branco
+[*.pug]
+trim_trailing_whitespace = false
+
+# Remove as configurações dos arquivos de distribuição
+[dist/*]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset

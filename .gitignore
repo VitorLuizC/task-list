@@ -1,0 +1,10 @@
+# Dependências do Node.js
+node_modules
+
+# Arquivos de distribuição
+dist
+
+# Logs
+npm-debug.log.*
+*.log
+logs
