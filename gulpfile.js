@@ -9,7 +9,7 @@ const config = {
   entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, './dist')
+    path: path.resolve(__dirname, './dist/js')
   }
 };
 
@@ -39,10 +39,15 @@ gulp.task('build:styl', () => {
   gulp.src('./src/index.styl')
     .pipe(styl())
     .pipe(rename({ basename: 'style' }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('build', ['build:js', 'build:pug', 'build:styl']);
+gulp.task('move:images', () => {
+  gulp.src('./src/assets/images/**/*')
+    .pipe(gulp.dest('./dist/img'))
+})
+
+gulp.task('build', ['move:images', 'build:js', 'build:pug', 'build:styl']);
 
 gulp.task('watch', ['build'], () => {
   gulp.watch('./src/**/*.js', ['build:js']);
